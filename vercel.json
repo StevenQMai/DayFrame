@@ -1,15 +1,14 @@
 {
+  "version": 2,
   "buildCommand": "cd client && npm run build",
   "outputDirectory": "dist/public",
   "framework": "vite",
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
+    { "source": "/api/(.*)", "destination": "/api" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "/api" },
+    { "src": "/(.*)", "dest": "/dist/public/$1" },
+    { "src": "/", "dest": "/dist/public/index.html" }
   ]
 } 
